@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Student budget calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <a class="nav-btn" href="#hero"> Home </a>
+      <a class="nav-btn" href=""> Restart</a>
+    </nav>
+
+    <div class="container">
+      <!-- Hero -->
+      <header class="section" id="hero">
+        <div>
+          <h1 class="hero-title">Student budget calculator</h1>
+          <h3>
+            Low maintenance budgetting for students living away from home.
+          </h3>
+          <a class="btn get-started-btn" href="#income">Get Started</a>
+        </div>
+        <img
+          class="hero-image"
+          src="/images/budgetting.svg"
+          alt="person-budgetting"
+        />
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <form id="budget-form">
+          <!--  Income -->
+          <div class="section" id="income">
+            <div>
+              <h1 class="weekly-income-title">
+                How much do you earn per week?
+              </h1>
+              <!-- Weekly Income Form -->
+              <div class="label">Enter your weekly income</div>
+              <br />
+              <input
+                required
+                type="number"
+                id="weekly-income"
+                placeholder="$"
+              />
+            </div>
+            <img
+              class="income-image"
+              src="/images/income.svg"
+              alt="wallet-income"
+            />
+          </div>
+          <!-- Next arrow -->
+          <div class="arrow">
+            <a class="arrow-btn" href="#savings">
+              <img src="/images/down-arrow.svg" alt="down-arrow" />
+            </a>
+          </div>
+
+          <!-- Savings -->
+          <div class="section" id="savings">
+            <div>
+              <h1 class="savings-title">How much would you like to save?</h1>
+              <!-- Savings Form -->
+              <div class="label">Enter your weekly savings goal</div>
+              <br />
+              <input required type="number" id="savings-goal" placeholder="$" />
+            </div>
+            <img
+              class="savings-image"
+              src="/images/savings.svg"
+              alt="savings"
+            />
+          </div>
+
+          <!-- Next arrow -->
+          <div class="arrow">
+            <a class="arrow-btn" href="#living-expenses">
+              <img src="/images/down-arrow.svg" alt="down-arrow" />
+            </a>
+          </div>
+
+          <!-- Living Expenses -->
+          <div class="section" id="living-expenses">
+            <div>
+              <h1 class="living-expenses-title">
+                What are your living expenses like?
+              </h1>
+              <!-- Living Expenses Form -->
+              <div class="label">Enter your weekly living expenses</div>
+              <br />
+              <input
+                required
+                type="number"
+                id="living-expenses-rent"
+                placeholder="Rent"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="living-expenses-bills"
+                placeholder="Bills"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="living-grocery"
+                placeholder="Grocery"
+              />
+            </div>
+            <img
+              class="living-image"
+              src="/images/living-expenses.svg"
+              alt="house"
+            />
+          </div>
+          <!-- Next arrow -->
+          <div class="arrow">
+            <a class="arrow-btn" href="#uni-expenses">
+              <img src="/images/down-arrow.svg" alt="down-arrow" />
+            </a>
+          </div>
+          <!-- University Expenses -->
+          <div class="section" id="uni-expenses">
+            <div>
+              <h1 class="uni-expenses-title">
+                What are your university expenses like?
+              </h1>
+              <!-- Uni Expenses Form -->
+              <div class="label">Enter your weekly uni expenses</div>
+              <br />
+              <input
+                required
+                type="number"
+                id="uni-expenses-transport"
+                placeholder="Transport"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="uni-expenses-books"
+                placeholder="Stationary & Books"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="uni-expenses-other"
+                placeholder="Other costs (Coffee, food, etc.)"
+              />
+            </div>
+            <img
+              class="uni-image"
+              src="/images/uni-expenses.svg"
+              alt="university-books"
+            />
+          </div>
+          <!-- Next arrow -->
+          <div class="arrow">
+            <a class="arrow-btn" href="#personal-expenses">
+              <img src="/images/down-arrow.svg" alt="down-arrow" />
+            </a>
+          </div>
+          <!-- Personal Expenses -->
+          <div class="section" id="personal-expenses">
+            <div>
+              <h1 class="personal-expenses-title">
+                What are your personal expenses like?
+              </h1>
+              <!-- Personal Expenses Form -->
+              <div class="label">Enter your weekly personal expenses</div>
+              <br />
+              <input
+                required
+                type="number"
+                id="personal-expenses-food"
+                placeholder="Eating out"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="personal-expenses-hobbies"
+                placeholder="Hobbies/ clubs"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="personal-expenses-shopping"
+                placeholder="Shopping"
+              />
+              <br />
+              <input
+                required
+                type="number"
+                id="personal-expenses-activities"
+                placeholder="Activities"
+              />
+            </div>
+            <img
+              class="personal-image"
+              src="/images/personal-expenses.svg"
+              alt="shopping"
+            />
+          </div>
+
+          <!-- Calculate button -->
+          <div id="calculate">
+            <button id="calc" class="btn calculate-btn">Calculate</button>
+          </div>
+
+          <!-- Results Page -->
+          <div id="results-page">
+            <div class="results-flex">
+              <div>
+                <h1 id="result-header" class="results-title"></h1>
+                <div class="results-totals">
+                  <p>
+                    Remaining funds (Net result): $<span id="result-net"></span>
+                  </p>
+                  <p>Total weekly costs: $<span id="result-total"></span></p>
+                  <p>
+                    Average cost per expense: $<span id="result-average"></span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Results Image -->
+              <div>
+                <img
+                  id="on-budget-result"
+                  class="hide-img"
+                  src="/images/smile.svg"
+                  alt="smiling face"
+                />
+                <img
+                  id="not-on-budget-result"
+                  class="hide-img"
+                  src="/images/frown.svg"
+                  alt="frowning face"
+                />
+              </div>
+            </div>
+
+            <!-- Reaction Image -->
+
+            <!-- Expenses Total Sections -->
+            <div class="expenses-container">
+              <div class="total-section">
+                <h2>Living Total</h2>
+                <p>
+                  Rent: $ <span id="result-rent"></span> <br />
+                  Bills: $<span id="result-bills"></span><br />
+                  Groceries: $ <span id="result-groceries"></span><br />
+                </p>
+                <h3>$ <span id="result-living-total"></span></h3>
+              </div>
+
+              <div class="total-section">
+                <h2>Uni Total</h2>
+                <p>
+                  Transport: $<span id="result-transport"></span><br />
+                  Stationary & books: $ <span id="result-stationary"></span
+                  ><br />
+                  Other costs: $ <span id="result-other"></span><br />
+                </p>
+                <h3>$ <span id="result-total-uni"></span></h3>
+              </div>
+
+              <div class="total-section">
+                <h2>Personal Total</h2>
+                <p>
+                  Eating out: $ <span id="result-food"></span> <br />
+                  Hobbies/ clubs: $ <span id="result-hobbies"></span><br />
+                  Shopping: $ <span id="result-shopping"></span><br />
+                  Activities: $<span id="result-activities"></span> <br />
+                </p>
+                <h3>$ <span id="result-total-personal"></span></h3>
+              </div>
+            </div>
+          </div>
+          <div id="home">
+            <a id="reset-btn" class="btn end-btn" href="/">Restart</a>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
